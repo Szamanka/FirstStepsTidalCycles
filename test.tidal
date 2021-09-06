@@ -1,0 +1,30 @@
+let solo = (>>) hush
+
+d1 $ sound "pluck*4"
+    #up (run 4)
+    #gain 0.80
+    #speed "[1.20 0.78 0.90] [1.20 0.78 0.90]"
+
+hush
+
+solo $ d2 $ sound "bd:3*4"
+    #gain 0.67
+
+
+d3 $ slow 1.7 $ sound "pluck*3"
+  #speed "1.3 1.5 0.4 1.4"
+  #room 0.5 #size 0.2
+  #pan "0.02 0.05 0.9 1 1.6"
+
+hush
+
+d4 $ slow 2 $ sound "pluck:10"
+   #speed "1.2"
+   #room 0.6 #size 0.14
+   #gain 0.89
+
+d5 $ slow 2 $ sound "sn*4[5,4]"
+  # jux reverse
+  $chunk 5 (fast 12)
+  $sound "glitch"
+  #speed (range 0.58 1.02 rand)
